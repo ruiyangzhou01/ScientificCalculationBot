@@ -3,14 +3,14 @@
   <h1 align="center">Scientific Calculation Bot</h1>
 </p>
 <p align="center">
-    <img src="https://img.shields.io/github/v/release/fentaniao/ScientificCalculationBot?&color=blue&logo=hack-the-box"/>
+    <img src="https://img.shields.io/github/v/release/ruiyangzhou01/ScientificCalculationBot?&color=blue&logo=hack-the-box"/>
     <img alt="ChatBot" src="https://img.shields.io/badge/-ChatBot-3572A5?style=flat&logo=ChatBot&logoColor=white" />
     <img alt="Python" src="https://img.shields.io/badge/-Python-3572A5?style=flat&logo=python&logoColor=white" />
     <img alt="CQ-HTTP" src="https://img.shields.io/badge/-CQ--HTTP-3572A5?style=flat&logo=tencentqq&logoColor=white" />
 </p>
 <p align="center">
-	<a href="https://github.com/Fentaniao/ScientificCalculationBot/blob/main/README.md">English Readme</a> • 
-	<a href="https://github.com/Fentaniao/ScientificCalculationBot/blob/main/README_zh.md">中文自述文件</a>
+	<a href="https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/README.md">English Readme</a> • 
+	<a href="https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/README_zh.md">中文自述文件</a>
 </p>
 
 An intelligent QQ bot based on Python scientific calculation and drawing library and CQ-HTTP framework, providing end-to-end services based on QQ client, and integrating scientific calculation, drawing, layout, chat interaction, group manage and other functions.
@@ -51,7 +51,7 @@ Scientific calculation functionality is provided by Python's numpy library and S
 - Differential equations
 - ......
 
-[Click on the document](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/doc/ScientificCalculation.md) for details.
+[Click on the document](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/doc/ScientificCalculation.md) for details.
 
 ### Plot
 
@@ -65,7 +65,7 @@ The plotting functionality is provided by Python's matplotlib library, which pro
 - binary implicit functions
 - Parameter equations
 
-[Click on the document](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/doc/Plot.md) for details
+[Click on the document](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/doc/Plot.md) for details
 
 ### Chat interaction and group management
 
@@ -81,7 +81,7 @@ The basic features such as chat interaction and group chat management are implem
 - Get information
 - Self-check
 
-[Click on the document](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/doc/Interaction.md) for details.
+[Click on the document](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/doc/Interaction.md) for details.
 
 ### Useful functions
 
@@ -98,14 +98,8 @@ A series of utilities developed around the cloud and Python. Available features 
 - Voice Message
 - Several experimental features (Beta)
 
-[Click on the document](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/doc/Utilities.md) for details.
-
-## Contact
-
-Author: Fentaniao
-
-Email: [Fentaniao@gmail.com](mailto:Fentaniao@gmail.com)
+[Click on the document](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/doc/Utilities.md) for details.
 
 ## License
 
-[GPL-3.0 License](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/LICENSE) © Fentaniao
+[GPL-3.0 License](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/LICENSE) © ruiyangzhou01
