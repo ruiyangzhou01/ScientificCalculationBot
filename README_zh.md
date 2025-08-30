@@ -3,13 +3,13 @@
   <h1 align="center">Scientific Calculation Bot</h2>
 </p>
 <p align="center">
-    <img src="https://img.shields.io/github/v/release/fentaniao/ScientificCalculationBot?&color=blue&logo=hack-the-box"/>
+    <img src="https://img.shields.io/github/v/release/ruiyangzhou01/ScientificCalculationBot?&color=blue&logo=hack-the-box"/>
     <img alt="ChatBot" src="https://img.shields.io/badge/-ChatBot-3572A5?style=flat&logo=ChatBot&logoColor=white" />
     <img alt="Python" src="https://img.shields.io/badge/-Python-3572A5?style=flat&logo=python&logoColor=white" />
     <img alt="CQ-HTTP" src="https://img.shields.io/badge/-CQ--HTTP-3572A5?style=flat&logo=tencentqq&logoColor=white" />
 </p>
 
-[English Readme](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/README.md) · [中文自述文件](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/README_zh.md)
+[English Readme](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/README.md) · [中文自述文件](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/README_zh.md)
 
 基于Python 科学计算和绘图库和CQ-HTTP框架开发的，提供基于QQ客户端的端到端服务，集科学计算、绘图、排版、聊天互动、群聊管理等功能为一体的智能QQ机器人。
 
@@ -49,7 +49,7 @@
 - 微分方程
 - ......
 
-[点击文档](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/doc/ScientificCalculation.md)查看详细内容。
+[点击文档](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/doc/ScientificCalculation.md)查看详细内容。
 
 ### 绘图
 
@@ -63,7 +63,7 @@
 - 二元隐函数
 - 参数方程
 
-[点击文档](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/doc/Plot.md)查看详细内容。
+[点击文档](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/doc/Plot.md)查看详细内容。
 
 ### 聊天互动和群聊管理
 
@@ -79,7 +79,7 @@
 - 获取信息
 - 自检
 
-[点击文档](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/doc/Interaction.md)查看详细内容。
+[点击文档](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/doc/Interaction.md)查看详细内容。
 
 ### 实用功能
 
@@ -96,14 +96,8 @@
 - 发送语音消息
 - 若干实验性功能(Beta)
 
-[点击文档](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/doc/Utilities.md)查看详细内容。
-
-## 联系
-
-作者： Fentaniao
-
-邮箱： [Fentaniao@gmail.com](mailto:Fentaniao@gmail.com)
+[点击文档](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/doc/Utilities.md)查看详细内容。
 
 ## 许可证
 
-[GPL-3.0 License](https://github.com/Fentaniao/ScientificCalculationBot/blob/main/LICENSE) © Fentaniao
+[GPL-3.0 License](https://github.com/ruiyangzhou01/ScientificCalculationBot/blob/main/LICENSE) © ruiyangzhou01
