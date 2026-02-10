@@ -1,340 +1,341 @@
-# 科学计算文档
+# Scientific Calculation Guide
 
 [TOC]
 
-## 原理
+[English](ScientificCalculation.md) | [简体中文](ScientificCalculation_zh-CN.md) | [Deutsch](ScientificCalculation_de.md) | [Español](ScientificCalculation_es.md) | [Français](ScientificCalculation_fr.md)
 
-本部分通过Python的SymPy库来实现科学计算，并对QQ读取进来的字符串进行了处理，因此理论上能够通过QQ消息实现所有的SymPy库功能，并且通过机器人的文字消息或图片消息返回结果。
+## Overview
 
-本文档列出了一些经过详细测试的、基本的功能。
+This module uses Python's SymPy library to perform scientific calculations. Incoming QQ messages are parsed into SymPy expressions, so in theory you can access most SymPy features through QQ. The bot returns results as text messages or rendered images.
 
-查看[SymPy文档](https://www.osgeo.cn/sympy/index.html)以了解可调用的全部功能。
+This document lists commonly tested, core features. See the [SymPy documentation](https://docs.sympy.org/latest/index.html) for the full API.
 
-## 模板
+## Command template
 
 ```python
 sympy
-# 注释
+# comments
 a = cos(pi)
 
 show([a])
 play
 ```
 
-## 输出结果
+## Output
 
-### `show`文字输出
+### `show` text output
 
-以文字消息输出结果，输入参数为变量表达式。
+Send results back as text messages. The input parameter is a variable or expression.
 
-- 单变量：`show(单变量)`
-- 多变量：`show([变量1，变量2，变量3])`
+- Single variable: `show(variable)`
+- Multiple variables: `show([var1, var2, var3])`
 
-### `play`LaTeX引擎渲染输出
+### `play` LaTeX rendering
 
-最后一行输入`play`命令，机器人会将结果通过LaTeX引擎渲染为图片并输出。
+Enter `play` on the last line to render the results as an image through the LaTeX engine.
 
-部分命令无法采用LaTeX进行渲染，则必须调用`show()`以文本形式输出。
+Some commands cannot be rendered by LaTeX and must use `show()` for text output.
 
-## 常用功能
+## Common functions
 
-### 符号表示
+### Symbolic representation
 
-#### `Symbol`符号表示
+#### `Symbol` create symbols
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型 | 默认值 | 说明       |
-| ------------ | -------- | ------ | ---------- |
-| `expression` | 字符串   | -      | 变量表达式 |
+| Parameter    | Type   | Default | Description         |
+| ------------ | ------ | ------- | ------------------- |
+| `expression` | string | -       | Variable expression |
 
-##### 注意
+##### Notes
 
-- 变量名要求为单个字母
+- Variable names should be a single letter.
+- Greek letters (by English spelling) and mathematical constants are supported.
 
-- 支持希腊字母（以英文拼写）和数学常数
-
-##### 示例
+##### Example
 
 ```python
-# 变量名=Symbol(‘变量表达式’)
-a = Symbol(‘alpha ** 2’)
-x = Symbol(‘x’)
+# variable = Symbol('expression')
+a = Symbol('alpha ** 2')
+x = Symbol('x')
 ```
 
-### 恒等变换
+### Identity transformations
 
-#### `expand`展开方程
+#### `expand` expand expressions
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明       |
-| ------------ | ---------- | ------ | ---------- |
-| `expression` | 符号表达式 | -      | 变量表达式 |
+| Parameter    | Type              | Default | Description         |
+| ------------ | ----------------- | ------- | ------------------- |
+| `expression` | symbolic expression | -     | Expression to expand |
 
-##### 注意
+##### Notes
 
-- 参数写在最前面
-- 通过点号与函数进行连接
+- The expression appears before the method.
+- Use dot notation to call the method.
 
-##### 示例
+##### Example
 
 ```python
-# 表达式.expand()展开方程
+# expression.expand()
 ((x + y) ** 3).expand()
 ```
 
-#### `facrot`折叠方程
+#### `factor` factor expressions
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明       |
-| ------------ | ---------- | ------ | ---------- |
-| `expression` | 符号表达式 | -      | 变量表达式 |
+| Parameter    | Type              | Default | Description        |
+| ------------ | ----------------- | ------- | ------------------ |
+| `expression` | symbolic expression | -     | Expression to factor |
 
-##### 注意
+##### Notes
 
-无
+None.
 
-##### 示例
+##### Example
 
 ```python
-# facrot(表达式)折叠方程
+# factor(expression)
 factor(x ** 2 + 2 * x * y + y ** 2)
 ```
 
-#### `apart`分离分式
+#### `apart` partial fraction decomposition
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明       |
-| ------------ | ---------- | ------ | ---------- |
-| `expression` | 符号表达式 | -      | 变量表达式 |
+| Parameter    | Type              | Default | Description               |
+| ------------ | ----------------- | ------- | ------------------------- |
+| `expression` | symbolic expression | -     | Rational expression input |
 
-##### 注意
+##### Notes
 
-无
+None.
 
-##### 示例
+##### Example
 
 ```python
-# apart(表达式)分离分式
+# apart(expression)
 apart((x + 3) / (x - 1))
 ```
 
-#### `together`合并分式
+#### `together` combine fractions
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明       |
-| ------------ | ---------- | ------ | ---------- |
-| `expression` | 符号表达式 | -      | 变量表达式 |
+| Parameter    | Type              | Default | Description          |
+| ------------ | ----------------- | ------- | -------------------- |
+| `expression` | symbolic expression | -     | Expression to combine |
 
-##### 注意
+##### Notes
 
-无
+None.
 
-##### 示例
+##### Example
 
 ```python
-# together(表达式)合并分式
+# together(expression)
 together(1 / x + 1 / y + 1 / z)
 ```
 
-### 化简
+### Simplification
 
-#### `simplify`常规化简
+#### `simplify` general simplification
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明       |
-| ------------ | ---------- | ------ | ---------- |
-| `expression` | 符号表达式 | -      | 变量表达式 |
+| Parameter    | Type              | Default | Description             |
+| ------------ | ----------------- | ------- | ----------------------- |
+| `expression` | symbolic expression | -     | Expression to simplify |
 
-##### 注意
+##### Notes
 
-无
+None.
 
-##### 示例
+##### Example
 
 ```python
-# simplify()常规化简
+# simplify(expression)
 simplify((x ** 3 + x ** 2 - x - 1) / (x ** 2 + 2 * x + 1))
 ```
 
-#### `trigsimp`三角化简
+#### `trigsimp` trigonometric simplification
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明       |
-| ------------ | ---------- | ------ | ---------- |
-| `expression` | 符号表达式 | -      | 变量表达式 |
+| Parameter    | Type              | Default | Description                       |
+| ------------ | ----------------- | ------- | --------------------------------- |
+| `expression` | symbolic expression | -     | Expression containing trigonometry |
 
-##### 注意
+##### Notes
 
-无
+None.
 
-##### 示例
+##### Example
 
 ```python
-# trigsimp( )三角化简
+# trigsimp(expression)
 trigsimp(sin(x) / cos(x))
 ```
 
-#### `powsimp`指数化简
+#### `powsimp` exponential simplification
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明       |
-| ------------ | ---------- | ------ | ---------- |
-| `expression` | 符号表达式 | -      | 变量表达式 |
+| Parameter    | Type              | Default | Description            |
+| ------------ | ----------------- | ------- | ---------------------- |
+| `expression` | symbolic expression | -     | Expression with powers |
 
-##### 注意
+##### Notes
 
-无
+None.
 
-##### 示例
+##### Example
 
 ```python
-# powsimp()指数化简
+# powsimp(expression)
 powsimp(x ** a * x ** b)
 ```
 
-### 解方程
+### Solve equations
 
-#### `solve`解方程
+#### `solve` solve equations
 
-##### 参数
+##### Parameters
 
-| 参数   | 数据类型 | 默认值 | 说明       |
-| ---------- | -------- | ------ | ---------- |
-| `expression` | 列表   | -      | 要解的方程，要求右端等于0 |
-| `unsolved` | 列表   | -      | 要解的未知数 |
+| Parameter    | Type   | Default | Description                                |
+| ------------ | ------ | ------- | ------------------------------------------ |
+| `expression` | list   | -       | Equations to solve (right-hand side is 0) |
+| `unsolved`   | list   | -       | Unknowns to solve for                      |
 
-##### 注意
+##### Notes
 
-- 参数要表示为列表形式
+- Parameters must be provided as lists.
 
-##### 示例
+##### Example
 
 ```python
-# 二元一次方程
+# Solve a system of two linear equations
 solve([2 * x - y - 3, 3 * x + y - 7], [x, y])
 ```
 
-### 极限
+### Limits
 
-#### `limit`求极限
+#### `limit` compute limits
 
-##### 参数
+##### Parameters
 
-| 参数   | 数据类型 | 默认值 | 说明       |
-| ---------- | -------- | ------ | ---------- |
-| `expression` | 符号表达式   | -      | 函数 |
-| `var` | 符号表达式   | -      | 变量 |
-| `aim` | 数   | -      | 趋近于 |
-| `direction` | 字符串   | 求极限      | 可选:趋近方向 |
+| Parameter    | Type              | Default | Description           |
+| ------------ | ----------------- | ------- | --------------------- |
+| `expression` | symbolic expression | -     | Function              |
+| `var`        | symbolic expression | -     | Variable              |
+| `aim`        | number            | -       | Limit point            |
+| `direction`  | string            | -       | Optional direction    |
 
-##### 注意
+##### Notes
 
-- 无穷用两个小写的oo表示.
-- dir='+'求右极限，'-'求左极限
-- 不写dir也是求极限
+- Use `oo` for infinity (two lowercase letters).
+- `dir='+'` for right-hand limits, `dir='-'` for left-hand limits.
+- Without `dir`, the two-sided limit is computed.
 
-##### 示例
+##### Example
 
 ```python
-# limit(函数,变量,趋近于,可选:趋近方向)求极限
+# limit(function, variable, target, optional direction)
 limit(1 / x, x, 2)
 a = limit(1 / x, x, oo, dir='-')
 show([a])
 ```
 
-### 微积分
+### Calculus
 
-#### `diff`求导
+#### `diff` differentiation
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明          |
-| ------------ | ---------- | ------ | ------------- |
-| `expression` | 符号表达式 | -      | 函数          |
-| `var`        | 符号表达式 | -      | 求导变量      |
-| `order`      | 正整数     | 1      | 可选:求导阶数 |
+| Parameter    | Type              | Default | Description              |
+| ------------ | ----------------- | ------- | ------------------------ |
+| `expression` | symbolic expression | -     | Function to differentiate |
+| `var`        | symbolic expression | -     | Differentiation variable |
+| `order`      | positive integer  | 1       | Optional derivative order |
 
-##### 注意
+##### Notes
 
-无
+None.
 
-##### 示例
+##### Example
 
 ```python
-# diff(函数,求导变量,可选:求导阶数)求导
+# diff(function, variable, optional order)
 diff(x ** 3, x, 2)
 ```
 
-#### `integrate`不定积分
+#### `integrate` indefinite integral
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明     |
-| ------------ | ---------- | ------ | -------- |
-| `expression` | 符号表达式 | -      | 被积函数 |
-| `var`        | 符号表达式 | -      | 积分变量 |
+| Parameter    | Type              | Default | Description    |
+| ------------ | ----------------- | ------- | -------------- |
+| `expression` | symbolic expression | -     | Integrand      |
+| `var`        | symbolic expression | -     | Integration variable |
 
-##### 注意
+##### Notes
 
-无
+None.
 
-##### 示例
+##### Example
 
 ```python
-# integrate(被积函数,积分变量)不定积分
+# integrate(integrand, variable)
 integrate(sin(x), x)
 ```
 
-#### `integrate`定积分
+#### `integrate` definite integral
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明                 |
-| ------------ | ---------- | ------ | -------------------- |
-| `expression` | 符号表达式 | -      | 被积函数             |
-| `parameters` | 元组       | -      | (积分变量,下限,上限) |
+| Parameter    | Type              | Default | Description                          |
+| ------------ | ----------------- | ------- | ------------------------------------ |
+| `expression` | symbolic expression | -     | Integrand                            |
+| `parameters` | tuple             | -       | (variable, lower bound, upper bound) |
 
-##### 注意
+##### Notes
 
-无
+None.
 
-##### 示例
+##### Example
 
 ```python
-# integrate(被积函数,(积分变量,下限,上限))定积分
+# integrate(integrand, (variable, lower bound, upper bound))
 integrate(sin(x), (x, 0, pi / 2))
 ```
 
-### 微分方程
+### Differential equations
 
-#### `dsolve`求解微分方程
+#### `dsolve` solve differential equations
 
-##### 参数
+##### Parameters
 
-| 参数         | 数据类型   | 默认值 | 说明                        |
-| ------------ | ---------- | ------ | --------------------------- |
-| `expression` | 符号表达式 | -      | 待求解的方程，要求右端等于0 |
-| `function`   | 函数       | -      | 所要求解的函数              |
+| Parameter    | Type              | Default | Description                               |
+| ------------ | ----------------- | ------- | ----------------------------------------- |
+| `expression` | symbolic expression | -     | Equation to solve (right-hand side is 0) |
+| `function`   | function          | -       | Function to solve for                     |
 
-##### 注意
+##### Notes
 
-- 先要用`Function`函数建立函数
+- Use `Function` first to define the function symbol.
 
-##### 示例
+##### Example
 
 ```python
-# 以 y′=2xy 为例
+# Example: y' = 2xy
 f = Function('f')
 a = dsolve(diff(f(x), x) - 2 * f(x) * x, f(x))
 show([a])
 ```
 
-### 矩阵化简
+### Matrix simplification
+
+Matrix-related simplifications are planned for future updates.

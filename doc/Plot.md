@@ -1,86 +1,87 @@
-# 绘图文档
+# Plotting Guide
 
 [TOC]
 
-## 原理
+[English](Plot.md) | [简体中文](Plot_zh-CN.md) | [Deutsch](Plot_de.md) | [Español](Plot_es.md) | [Français](Plot_fr.md)
 
-本部分调用了Python的matplotlib库来实现科学计算，并对QQ读取进来的字符串进行了处理，通过机器人的图片消息返回结果。
+## Overview
 
+This module uses Python's matplotlib library to generate plots from commands sent via QQ. The bot returns the rendered figure as an image message.
 
-## 模板
+## Command template
 
 ```python
-function('p1','p2')
+function('p1', 'p2')
 ```
 
-==每个参数前后必须加上单引号==
+- Wrap each parameter in single quotes.
 
-## 功能
+## Functions
 
-### `draw`一元函数
+### `draw` explicit single-variable function
 
-绘制并输出一元显函数
+Plot and output a one-dimensional explicit function.
 
-##### 参数
+##### Parameters
 
-| 参数        | 数据类型 | 默认值 | 说明                     |
-| ----------- | -------- | ------ | ------------------------ |
-| `fun`       | 字符串   | -      | 一元显函数               |
-| `x_arrange` | 字符串   | -      | 变量的初始值，终值和步长 |
+| Parameter   | Type   | Default | Description                            |
+| ----------- | ------ | ------- | -------------------------------------- |
+| `fun`       | string | -       | Explicit function expression           |
+| `x_range`   | string | -       | Start value, end value, and step size  |
 
-##### 注意
+##### Notes
 
-- 变量的范围的三个子参数中间用逗号隔开
+- Separate the three range values with commas.
 
-##### 示例
+##### Example
 
 ```python
-# `draw(fun, x_arange)`
-draw_fun('sin(x) / x', '-10，10，0.1')
+# draw(fun, x_range)
+draw('sin(x) / x', '-10, 10, 0.1')
 ```
 
-### `draw_imp`隐函数
+### `draw_imp` implicit function
 
-绘制并输出二元隐函数
+Plot and output a two-variable implicit function.
 
-##### 参数
+##### Parameters
 
-| 参数     | 数据类型 | 默认值 | 说明                     |
-| -------- | -------- | ------ | ------------------------ |
-| `fun`    | 字符串   | -      | 二元隐函数               |
-| `x_arrange` | 字符串   | -      | 第一变量的初始值，终值和步长 |
-| `y_arrange` | 字符串   | -      | 第二变量的初始值，终值和步长 |
+| Parameter   | Type   | Default | Description                            |
+| ----------- | ------ | ------- | -------------------------------------- |
+| `fun`       | string | -       | Implicit equation in x and y           |
+| `x_range`   | string | -       | Start value, end value, and step size for x |
+| `y_range`   | string | -       | Start value, end value, and step size for y |
 
-##### 注意
+##### Notes
 
-- 变量的范围的三个子参数中间用英文逗号隔开
+- Separate the range values with commas.
 
-##### 示例
+##### Example
 
 ```python
-# draw_imp(fun, x_arange,y_arange)绘制并输出二元隐函数
-draw_imp('17 * x**2 -16*abs(x)*y + 17 * y**2-256', '-6,6', '-6,6')
+# draw_imp(fun, x_range, y_range)
+draw_imp('17 * x**2 - 16*abs(x)*y + 17 * y**2 - 256', '-6, 6', '-6, 6')
 ```
 
-### `draw_para`参数方程
+### `draw_para` parametric equation
 
-绘制并输出单参数的参数方程
+Plot and output a single-parameter parametric equation.
 
-##### 参数
+##### Parameters
 
-| 参数     | 数据类型 | 默认值 | 说明                     |
-| -------- | -------- | ------ | ------------------------ |
-| `x_eq`    | 字符串   | -      | 第一变量关于参数的方程               |
-| `y_eq` | 字符串   | -      | 第二变量关于参数的方程 |
-| `t_arrange` | 字符串   | -      | 参数的初始值，终值和步长 |
+| Parameter  | Type   | Default | Description                              |
+| ---------- | ------ | ------- | ---------------------------------------- |
+| `x_eq`     | string | -       | Equation for the x variable in terms of t |
+| `y_eq`     | string | -       | Equation for the y variable in terms of t |
+| `t_range`  | string | -       | Start value, end value, and step size for t |
 
-##### 注意
+##### Notes
 
-- 变量的范围的三个子参数中间用英文逗号隔开
+- Separate the range values with commas.
 
-##### 示例
+##### Example
 
 ```python
-# draw_para(x_eq, y_eq, t_arrange)绘制并输出单参数的参数方程
+# draw_para(x_eq, y_eq, t_range)
 draw_para('2*sin(t)', '3*cos(t)', '0, 2*pi, 0.1')
 ```
