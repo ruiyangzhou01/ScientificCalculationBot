@@ -79,7 +79,7 @@ Gibt die Antwort als Textnachricht zurück.
 ### Gesichtserkennung
 
 <p>
-    <img alt="Tecent Cloud" src="https://img.shields.io/badge/-Tecent_Cloud-3572A5?style=flat&logo=tencentqq&logoColor=white" />
+    <img alt="Tencent Cloud" src="https://img.shields.io/badge/-Tencent_Cloud-3572A5?style=flat&logo=tencentqq&logoColor=white" />
 </p>
 
 #### Beschreibung
