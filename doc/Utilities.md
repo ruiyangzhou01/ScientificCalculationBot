@@ -1,108 +1,107 @@
-# 实用功能
+# Utilities Guide
 
 [TOC]
 
-## 科学百科
+[English](Utilities.md) | [简体中文](Utilities_zh-CN.md) | [Deutsch](Utilities_de.md) | [Español](Utilities_es.md) | [Français](Utilities_fr.md)
+
+## Science encyclopedia
 
 <p>
     <img alt="Wolfram" src="https://img.shields.io/badge/-Wolfram-3572A5?style=flat&logo=Wolfram&logoColor=white" />
     <img alt="Wolfram Language" src="https://img.shields.io/badge/-Wolfram_Language-3572A5?style=flat&logo=WolframLanguage&logoColor=white" />
 </p>
 
-#### 描述
+#### Description
 
-调用Wolfram API实现通过Wolfram搜索引擎进行科学百科。
+Use the Wolfram API to query the Wolfram knowledge engine.
 
-#### `easy_res`简单结果
+#### `easy_res` simple result
 
-##### 参数
+##### Parameters
 
-| 参数    | 数据类型 | 默认值 | 说明 |
-| ------- | -------- | ------ | ---- |
-| `query` | 字符串   | -      | 问题 |
+| Parameter | Type   | Default | Description |
+| --------- | ------ | ------- | ----------- |
+| `query`   | string | -       | Question    |
 
-##### 响应
+##### Response
 
-通过文字消息返回回答的结果
+Return the answer as an image message.
 
-#### `short_answers`简短回答
+#### `short_answers` short answer
 
-##### 参数
+##### Parameters
 
-| 参数    | 数据类型 | 默认值 | 说明 |
-| ------- | -------- | ------ | ---- |
-| `query` | 字符串   | -      | 问题 |
+| Parameter | Type   | Default | Description |
+| --------- | ------ | ------- | ----------- |
+| `query`   | string | -       | Question    |
 
-##### 响应
+##### Response
 
-通过文字消息返回回答的结果
+Return the answer as a text message.
 
-#### `conversational`会话式回答
+#### `conversational` conversational answer
 
-##### 参数
+##### Parameters
 
-| 参数    | 数据类型 | 默认值 | 说明 |
-| ------- | -------- | ------ | ---- |
-| `query` | 字符串   | -      | 问题 |
-| `user_id` | 数   | -      | 用户号码 |
+| Parameter | Type   | Default | Description |
+| --------- | ------ | ------- | ----------- |
+| `query`   | string | -       | Question    |
+| `user_id` | number | -       | User ID     |
 
-##### 响应
+##### Response
 
-通过文字消息返回回答的结果
+Return the answer as a text message.
 
-## 发送语音
+## Voice messages
 
 <p>
     <img alt="Alibaba Cloud" src="https://img.shields.io/badge/-Alibaba_Cloud-3572A5?style=flat&logo=AlibabaCloud&logoColor=white" />
 </p>
 
-#### 描述
+#### Description
 
-调用阿里云API实现语音消息。
+Use the Alibaba Cloud API to synthesize voice messages.
 
-#### `group_send_record`在群里发送语音信息
+#### `group_send_record` send a voice message to a group
 
-##### 参数
+##### Parameters
 
-| 参数    | 数据类型 | 默认值 | 说明 |
-| ------- | -------- | ------ | ---- |
-| `text` | 字符串   | -      | 文本 |
+| Parameter | Type   | Default | Description |
+| --------- | ------ | ------- | ----------- |
+| `text`    | string | -       | Text        |
 
-##### 响应
+##### Response
 
-通过文字消息返回回答的结果
+Send a CQ `[record]` voice message to the group (no text message is returned).
 
-## 实验性功能(Beta)
+## Experimental features (Beta)
 
-### 人脸识别
-
+### Face recognition
 
 <p>
-    <img alt="Tecent Cloud" src="https://img.shields.io/badge/-Tecent_Cloud-3572A5?style=flat&logo=tencentqq&logoColor=white" />
+    <img alt="Tencent Cloud" src="https://img.shields.io/badge/-Tencent_Cloud-3572A5?style=flat&logo=tencentqq&logoColor=white" />
 </p>
 
-#### 描述
+#### Description
 
-调用腾讯云API实现人脸识别。
+Use the Tencent Cloud API for face recognition.
 
-### 拼写纠正
+### Spelling correction
 
-### 单词统计
+### Word statistics
 
-##### 输入
+##### Input
 
-输入待统计的字符串
+Provide the string to be analyzed.
 
-##### 处理
+##### Processing
 
-对输入的文章进行预处理，全部化为小写，删去无关字符，最后拆分得到单词列表
+1. Normalize the text by converting it to lowercase and removing irrelevant characters.
+2. Split the normalized string into a word list.
+3. Count occurrences of each word to form a dictionary of word counts.
+4. Convert the dictionary into a structure keyed by count with word lists as values.
+5. Sort by occurrence count and alphabetical order.
 
-统计单词在单词列表中的出现次数，生成以单词为键，单词出现次数为值的字典,并对字典进行处理
+##### Response
 
-由上一步的字典，生成以单词出现次数为键，对应单词放进列表中为值的新字典
-
-分别按照出现次数和单词在字母表里的顺序进行排序
-
-##### 响应
-
-通过文字消息返回回答的结果
+Return the result as a text message.
