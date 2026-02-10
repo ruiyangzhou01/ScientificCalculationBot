@@ -44,9 +44,9 @@ Algunos comandos no se pueden renderizar con LaTeX y deben devolverse con `show(
 
 ##### Parámetros
 
-| Parámetro    | Tipo   | Valor predeterminado | Descripción            |
-| ------------ | ------ | -------------------- | ---------------------- |
-| `expression` | string | -                    | Expresión de variable  |
+| Parámetro    | Tipo   | Valor predeterminado | Descripción       |
+| ------------ | ------ | -------------------- | ----------------- |
+| `expression` | string | -                    | Nombre del símbolo |
 
 ##### Notas
 
@@ -57,7 +57,8 @@ Algunos comandos no se pueden renderizar con LaTeX y deben devolverse con `show(
 
 ```python
 # variable = Symbol('expression')
-a = Symbol('alpha ** 2')
+alpha = Symbol('alpha')
+alpha_squared = alpha ** 2
 x = Symbol('x')
 ```
 

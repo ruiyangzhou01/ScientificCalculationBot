@@ -44,9 +44,9 @@ Einige Befehle lassen sich nicht per LaTeX rendern und müssen mit `show()` als 
 
 ##### Parameter
 
-| Parameter    | Typ    | Standard | Beschreibung        |
-| ------------ | ------ | -------- | ------------------- |
-| `expression` | string | -        | Variablenausdruck   |
+| Parameter    | Typ    | Standard | Beschreibung |
+| ------------ | ------ | -------- | ------------ |
+| `expression` | string | -        | Symbolname   |
 
 ##### Hinweise
 
@@ -57,7 +57,8 @@ Einige Befehle lassen sich nicht per LaTeX rendern und müssen mit `show()` als 
 
 ```python
 # variable = Symbol('expression')
-a = Symbol('alpha ** 2')
+alpha = Symbol('alpha')
+alpha_squared = alpha ** 2
 x = Symbol('x')
 ```
 

@@ -46,20 +46,20 @@ Traza y devuelve una función implícita de dos variables.
 
 ##### Parámetros
 
-| Parámetro | Tipo   | Valor predeterminado | Descripción                                      |
-| --------- | ------ | -------------------- | ------------------------------------------------ |
-| `fun`     | string | -                    | Ecuación implícita en x y y                     |
-| `x_range` | string | -                    | Valor inicial, final y paso para x              |
-| `y_range` | string | -                    | Valor inicial, final y paso para y              |
+| Parámetro | Tipo   | Valor predeterminado | Descripción                          |
+| --------- | ------ | -------------------- | ------------------------------------ |
+| `equation`| string | -                    | Ecuación implícita en x e y          |
+| `x_range` | string | -                    | Valor inicial y final para x         |
+| `y_range` | string | -                    | Valor inicial y final para y         |
 
 ##### Notas
 
-- Separe los valores con comas.
+- Separe los dos valores con comas.
 
 ##### Ejemplo
 
 ```python
-# draw_imp(fun, x_range, y_range)
+# draw_imp(equation, x_range, y_range)
 draw_imp('17 * x**2 - 16*abs(x)*y + 17 * y**2 - 256', '-6, 6', '-6, 6')
 ```
 

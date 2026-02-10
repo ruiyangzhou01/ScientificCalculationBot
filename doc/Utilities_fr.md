@@ -25,7 +25,7 @@ Utilise l'API Wolfram pour interroger le moteur de connaissances de Wolfram.
 
 ##### Réponse
 
-Renvoie la réponse sous forme de message texte.
+Renvoie une image contenant la réponse (Wolfram `/v1/simple`), encapsulée dans un message `[CQ:image,...]`.
 
 #### `short_answers` réponse courte
 
@@ -72,7 +72,7 @@ Utilise l'API Alibaba Cloud pour synthétiser des messages vocaux.
 
 ##### Réponse
 
-Renvoie la réponse sous forme de message texte.
+Renvoie un message vocal CQ `[record]` au groupe.
 
 ## Fonctionnalités expérimentales (Beta)
 

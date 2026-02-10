@@ -44,9 +44,9 @@ play
 
 ##### 参数
 
-| 参数         | 数据类型 | 默认值 | 说明       |
-| ------------ | -------- | ------ | ---------- |
-| `expression` | 字符串   | -      | 变量表达式 |
+| 参数         | 数据类型 | 默认值 | 说明     |
+| ------------ | -------- | ------ | -------- |
+| `expression` | 字符串   | -      | 符号名称 |
 
 ##### 注意
 
@@ -57,7 +57,8 @@ play
 
 ```python
 # variable = Symbol('expression')
-a = Symbol('alpha ** 2')
+alpha = Symbol('alpha')
+alpha_squared = alpha ** 2
 x = Symbol('x')
 ```
 

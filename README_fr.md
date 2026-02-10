@@ -34,10 +34,10 @@ Les utilisateurs envoient des messages depuis QQ, le bot capture et traite le co
 
 ## Documentation
 
-- [Guide du calcul scientifique](doc/ScientificCalculation.md)
-- [Guide de tracé](doc/Plot.md)
-- [API d'interaction et de gestion de groupes](doc/Interaction.md)
-- [Guide des utilitaires](doc/Utilities.md)
+- [Guide du calcul scientifique](doc/ScientificCalculation_fr.md)
+- [Guide de tracé](doc/Plot_fr.md)
+- [API d'interaction et de gestion de groupes](doc/Interaction_fr.md)
+- [Guide des utilitaires](doc/Utilities_fr.md)
 
 ## Prérequis
 

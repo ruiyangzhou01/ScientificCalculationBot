@@ -46,20 +46,20 @@ Trace et renvoie une fonction implicite à deux variables.
 
 ##### Paramètres
 
-| Paramètre | Type   | Valeur par défaut | Description                                     |
-| --------- | ------ | ----------------- | ----------------------------------------------- |
-| `fun`     | string | -                 | Équation implicite en x et y                    |
-| `x_range` | string | -                 | Valeur de début, de fin et pas pour x           |
-| `y_range` | string | -                 | Valeur de début, de fin et pas pour y           |
+| Paramètre | Type   | Valeur par défaut | Description                          |
+| --------- | ------ | ----------------- | ------------------------------------ |
+| `equation`| string | -                 | Équation implicite en x et y         |
+| `x_range` | string | -                 | Valeur de début et de fin pour x     |
+| `y_range` | string | -                 | Valeur de début et de fin pour y     |
 
 ##### Notes
 
-- Séparez les valeurs par des virgules.
+- Fournissez deux valeurs (début et fin) séparées par des virgules.
 
 ##### Exemple
 
 ```python
-# draw_imp(fun, x_range, y_range)
+# draw_imp(equation, x_range, y_range)
 draw_imp('17 * x**2 - 16*abs(x)*y + 17 * y**2 - 256', '-6, 6', '-6, 6')
 ```
 

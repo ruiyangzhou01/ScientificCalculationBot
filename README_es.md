@@ -34,10 +34,10 @@ Los usuarios envían mensajes desde QQ, el bot captura y procesa el contenido, y
 
 ## Documentación
 
-- [Guía de cálculo científico](doc/ScientificCalculation.md)
-- [Guía de trazado](doc/Plot.md)
-- [API de interacción y gestión de grupos](doc/Interaction.md)
-- [Guía de utilidades](doc/Utilities.md)
+- [Guía de cálculo científico](doc/ScientificCalculation_es.md)
+- [Guía de trazado](doc/Plot_es.md)
+- [API de interacción y gestión de grupos](doc/Interaction_es.md)
+- [Guía de utilidades](doc/Utilities_es.md)
 
 ## Requisitos previos
 

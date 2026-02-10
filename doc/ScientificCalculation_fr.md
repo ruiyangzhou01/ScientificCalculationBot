@@ -44,9 +44,9 @@ Certaines commandes ne peuvent pas être rendues par LaTeX et doivent être renv
 
 ##### Paramètres
 
-| Paramètre    | Type   | Valeur par défaut | Description            |
-| ------------ | ------ | ----------------- | ---------------------- |
-| `expression` | string | -                 | Expression de variable |
+| Paramètre    | Type   | Valeur par défaut | Description      |
+| ------------ | ------ | ----------------- | ---------------- |
+| `expression` | string | -                 | Nom du symbole   |
 
 ##### Notes
 
@@ -57,7 +57,8 @@ Certaines commandes ne peuvent pas être rendues par LaTeX et doivent être renv
 
 ```python
 # variable = Symbol('expression')
-a = Symbol('alpha ** 2')
+alpha = Symbol('alpha')
+alpha_squared = alpha ** 2
 x = Symbol('x')
 ```
 

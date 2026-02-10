@@ -46,20 +46,20 @@ Zeichnet eine zweidimensionale implizite Funktion.
 
 ##### Parameter
 
-| Parameter | Typ    | Standard | Beschreibung                                     |
-| --------- | ------ | -------- | ------------------------------------------------ |
-| `fun`     | string | -        | Implizite Gleichung in x und y                   |
-| `x_range` | string | -        | Startwert, Endwert und Schrittweite für x        |
-| `y_range` | string | -        | Startwert, Endwert und Schrittweite für y        |
+| Parameter | Typ    | Standard | Beschreibung                           |
+| --------- | ------ | -------- | -------------------------------------- |
+| `equation`| string | -        | Implizite Gleichung in x und y         |
+| `x_range` | string | -        | Startwert und Endwert für x            |
+| `y_range` | string | -        | Startwert und Endwert für y            |
 
 ##### Hinweise
 
-- Trenne die Werte mit Kommas.
+- Trenne die zwei Werte mit einem Komma.
 
 ##### Beispiel
 
 ```python
-# draw_imp(fun, x_range, y_range)
+# draw_imp(equation, x_range, y_range)
 draw_imp('17 * x**2 - 16*abs(x)*y + 17 * y**2 - 256', '-6, 6', '-6, 6')
 ```
 

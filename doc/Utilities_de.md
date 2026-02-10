@@ -25,7 +25,7 @@ Verwendet die Wolfram API, um das Wolfram-Wissenssystem abzufragen.
 
 ##### Antwort
 
-Gibt die Antwort als Textnachricht zurück.
+Gibt die Antwort als Bildnachricht zurück (Wolfram `/v1/simple` + `[CQ:image,...]`).
 
 #### `short_answers` kurze Antwort
 
@@ -72,7 +72,7 @@ Verwendet die Alibaba-Cloud-API zur Sprachsynthese.
 
 ##### Antwort
 
-Gibt die Antwort als Textnachricht zurück.
+Sendet eine CQ-`[record]`-Sprachnachricht in die Gruppe.
 
 ## Experimentelle Funktionen (Beta)
 

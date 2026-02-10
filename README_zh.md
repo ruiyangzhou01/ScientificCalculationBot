@@ -34,10 +34,10 @@
 
 ## 文档
 
-- [科学计算指南](doc/ScientificCalculation.md)
-- [绘图指南](doc/Plot.md)
-- [互动与群聊管理 API](doc/Interaction.md)
-- [实用功能指南](doc/Utilities.md)
+- [科学计算指南](doc/ScientificCalculation_zh-CN.md)
+- [绘图指南](doc/Plot_zh-CN.md)
+- [互动与群聊管理 API](doc/Interaction_zh-CN.md)
+- [实用功能指南](doc/Utilities_zh-CN.md)
 
 ## 运行前提
 

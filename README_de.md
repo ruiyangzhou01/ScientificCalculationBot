@@ -34,10 +34,10 @@ Nutzer senden Nachrichten über QQ, der Bot verarbeitet den Inhalt und liefert E
 
 ## Dokumentation
 
-- [Leitfaden für wissenschaftliche Berechnungen](doc/ScientificCalculation.md)
-- [Plotting-Leitfaden](doc/Plot.md)
-- [Interaktion & Gruppenverwaltung API](doc/Interaction.md)
-- [Dienstprogramme](doc/Utilities.md)
+- [Leitfaden für wissenschaftliche Berechnungen](doc/ScientificCalculation_de.md)
+- [Plotting-Leitfaden](doc/Plot_de.md)
+- [Interaktion & Gruppenverwaltung API](doc/Interaction_de.md)
+- [Dienstprogramme](doc/Utilities_de.md)
 
 ## Voraussetzungen
 

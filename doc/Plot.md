@@ -46,20 +46,20 @@ Plot and output a two-variable implicit function.
 
 ##### Parameters
 
-| Parameter   | Type   | Default | Description                            |
-| ----------- | ------ | ------- | -------------------------------------- |
-| `fun`       | string | -       | Implicit equation in x and y           |
-| `x_range`   | string | -       | Start value, end value, and step size for x |
-| `y_range`   | string | -       | Start value, end value, and step size for y |
+| Parameter   | Type   | Default | Description                    |
+| ----------- | ------ | ------- | ------------------------------ |
+| `equation`  | string | -       | Implicit equation in x and y   |
+| `x_range`   | string | -       | Start value and end value for x |
+| `y_range`   | string | -       | Start value and end value for y |
 
 ##### Notes
 
-- Separate the range values with commas.
+- Provide two values (start and end) separated by commas.
 
 ##### Example
 
 ```python
-# draw_imp(fun, x_range, y_range)
+# draw_imp(equation, x_range, y_range)
 draw_imp('17 * x**2 - 16*abs(x)*y + 17 * y**2 - 256', '-6, 6', '-6, 6')
 ```
 

@@ -25,7 +25,7 @@ Use the Wolfram API to query the Wolfram knowledge engine.
 
 ##### Response
 
-Return the answer as a text message.
+Return the answer as an image message.
 
 #### `short_answers` short answer
 
@@ -72,7 +72,7 @@ Use the Alibaba Cloud API to synthesize voice messages.
 
 ##### Response
 
-Return the answer as a text message.
+Send a CQ `[record]` voice message to the group (no text message is returned).
 
 ## Experimental features (Beta)
 

@@ -44,9 +44,9 @@ Some commands cannot be rendered by LaTeX and must use `show()` for text output.
 
 ##### Parameters
 
-| Parameter    | Type   | Default | Description         |
-| ------------ | ------ | ------- | ------------------- |
-| `expression` | string | -       | Variable expression |
+| Parameter    | Type   | Default | Description |
+| ------------ | ------ | ------- | ----------- |
+| `expression` | string | -       | Symbol name |
 
 ##### Notes
 
@@ -57,7 +57,8 @@ Some commands cannot be rendered by LaTeX and must use `show()` for text output.
 
 ```python
 # variable = Symbol('expression')
-a = Symbol('alpha ** 2')
+alpha = Symbol('alpha')
+alpha_squared = alpha ** 2
 x = Symbol('x')
 ```
 
@@ -180,7 +181,7 @@ None.
 trigsimp(sin(x) / cos(x))
 ```
 
-#### `powsimp` exponential simplification
+#### `powsimp` power simplification
 
 ##### Parameters
 
